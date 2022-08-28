@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: title,
         theme: ThemeData(
-          primaryColor: Colors.blueGrey,
+          primaryColor: Colors.black,
         ),
         home: const MainPage(title: title),
       );
@@ -53,8 +53,6 @@ class _MainPageState extends State<MainPage> {
   String lastMove = Player.none;
   late List<List<String>> matrix;
 
-  get thisMove => null;
-
   @override
   void initState() {
     super.initState();
@@ -80,20 +78,8 @@ class _MainPageState extends State<MainPage> {
           title: Center(child: Text(widget.title)),
         ),
         body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Text(
-              'Vez do Jogador ${lastMove == Player.X ? Player.O : Player.X}',
-              style: const TextStyle(fontSize: 30, color: Colors.white),
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: Utils.modelBuilder(
-                matrix,
-                (x, value) => buildRow(x),
-              ),
-            ),
-          ],
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: Utils.modelBuilder(matrix, (x, value) => buildRow(x)),
         ),
         bottomNavigationBar: IconButton(
           color: Colors.white,

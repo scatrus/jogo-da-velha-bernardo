@@ -177,7 +177,7 @@ class _MainPageState extends State<MainPage> {
                 setEmptyFields();
                 Navigator.of(context).pop();
               },
-              child: Center(child: const Text('Reiniciar')),
+              child: const Text('Reiniciar'),
             )
           ],
         ),

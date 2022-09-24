@@ -180,6 +180,7 @@ class _MainPageState extends State<MainPage> {
   }
 
   Future showEndDialog(String title) => showDialog(
+        barrierColor: getFieldColor(lastMove).withAlpha(255),
         context: context,
         barrierDismissible: false,
         builder: (context) => AlertDialog(
